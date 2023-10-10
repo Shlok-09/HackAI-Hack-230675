@@ -1,0 +1,14 @@
+{
+    "Fetcher Agent": {
+        "identity_key": "1782245ce8eb901113c972aa7a76d9ba5ebb5730319cdf849b5f70d26a11ee0f",
+        "wallet_key": "rvCeLnJ/DPEQIWcyjLP9TFdyKt1par0B5wOGEHMM6UY="
+    },
+    "Clinet Agent": {
+        "identity_key": "3cdf5576b860ea472ae20947243a6cf7aefec633d1487aff10cf6357943a2195",
+        "wallet_key": "uv7f0F+nqV3hC+RKuSBj3PoQ9a3OC2XTvsBA895J0zw="
+    },
+    "Client Agent": {
+        "identity_key": "8290e787c838b6f563b28f06c758687acd08c68fed3182f3112c699dd34b8d12",
+        "wallet_key": "2Qn3o3goZ4BtPdeGBOkYw9IwlPlZrKxnFPu0dWgioVs="
+    }
+}
