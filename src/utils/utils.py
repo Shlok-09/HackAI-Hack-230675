@@ -21,7 +21,7 @@ def convert(secondary, min_threshold, max_threshold):
     return s, dmin, dmax
 
 
-API_KEY = 'cur_live_POWL8geEkKrUVfLXF5gXtX3dP5Gb64jpzUxYBoyu' # ENTER YOUR API KEY HERE
+API_KEY = 'YOUR_API_KEY_HERE' # ENTER YOUR API KEY HERE
 
 
 '''
