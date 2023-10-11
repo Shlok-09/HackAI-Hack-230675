@@ -1,7 +1,9 @@
-from uagents import Agent,Context
+from uagents import Agent,Context,Protocol
 from messages import *
 from utils import convert
 from agents.fetcher import fetcher
+from messages import Notification
+from utils.email import send_email
 
 
 # User Input
@@ -49,6 +51,7 @@ async def print_rates(ctx: Context,_sender: str, msg: FetchResponse):
         for i in msg.rates.keys():
             if (msg.rates[i] >= max_threshold[i]):
                 alert_msg = f"ALERT!!! ALERT!!! The Currency of {i} crossed Maximum Limit of {max_threshold[i]}."
+                
                 ctx.logger.critical(alert_msg)
             elif (msg.rates[i]<=min_threshold[i]):
                 alert_msg = f"ALERT!!! ALERT!!! The Currency of {i} crossed Minimum Limit of {min_threshold[i]}."
@@ -58,4 +61,18 @@ async def print_rates(ctx: Context,_sender: str, msg: FetchResponse):
         ctx.logger.error("Results Not Being Fetched.")
 
 
-    
+# Create a protocol for notifications
+notify_protocol = Protocol("Notify")
+
+
+# Function to handle incoming notifications requests
+@notify_protocol.on_message(model=Notification)
+async def send_notification(ctx: Context, sender: str, msg: Notification):
+    # context = generate_context(msg)
+    success, data = await send_email(msg.name, msg.email, ctx)
+    if success:
+        ctx.logger.info("Email sent successfully")
+    else:
+        ctx.logger.error(f"Error sending email: {data}")
+
+client.include(notify_protocol)

@@ -1,1 +1,1 @@
-from .messages import FetchRequest, FetchResponse
+from .messages import FetchRequest, FetchResponse, Notification

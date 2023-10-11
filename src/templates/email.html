@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Monitor & Alert System</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Currency Exchange Monitor & Alert System</h1>
+        </div>
+        <div class="content">
+            <p>There is an Alert from Currency Exchange Monitor: </p>
+
+            {% for alert in alerts %}
+            <div class="alert">
+                <p><strong>Alert {{loop.index}} Details:</strong></p>
+                <p>Currency Pair: {{base_currrency}} to {{alert.target_currrencies}}</p>
+                <p>Current Rate: 1 {{base_currrency}} = {{alert.value}} {{alert.target_currrencies}}</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,4 +1,7 @@
 from uagents import Model
+from uagents import Model
+from typing import List, Dict, Tuple
+
 
 '''
 The Below FetchRequest is a Message model which will be used for sending the parameteres for fetching from the API.
@@ -25,4 +28,19 @@ class FetchResponse(Model):
 
     success: bool
     rates: dict
+
+
+
+"""
+
+This Below Notification Model is a Message Model for sending notifcation via Email.
+        
+"""
+class Notification(Model):
+
+
+    name: str
+    email: str
+    base_currency: str
+    notif: List[Tuple[str, float, float]]
 
